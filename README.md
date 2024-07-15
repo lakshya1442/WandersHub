@@ -1,2 +1,2 @@
 # WandersHub
-I have created a project for helping tourist industry
+I have created a project for helping tourism industry
