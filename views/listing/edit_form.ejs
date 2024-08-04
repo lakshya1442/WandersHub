@@ -1,0 +1,57 @@
+<%layout("layouts/boilerplate")-%>
+<body>
+   <h1 style="position: relative; left: 40%">Edit your Listing</h1> 
+
+   <form action="/listing/<%=data._id%>?_ninja=patch" method="post" class="needs-validation" novalidate>
+
+   <div class="container mb-3">
+      <label for="title" class="form-label">Property Title</label>
+      <input id="title" type="text" class="form-control" value="<%=data.title%>" name="listing[title]" required>
+
+   </div>
+ 
+   <div class="container mb-3">
+      <label for="description" class="form-label">Description</label>
+      <textarea id="description" class="form-control" type="text" name="listing[description]" required> <%=data.description%> </textarea>
+
+      
+
+   </div>
+   
+   <div class="container mb-3">
+
+      <label for="image" class="form-label">Image URL</label>
+      <input id="image" class="form-control" type="text" value="<%=data.image%>" name="listing[image]" required>
+      
+   </div>
+
+
+   <div class="container mb-3">
+
+      <label for="price" class="form-label">Price</label>
+      <input id="price" class="form-control" type="number" value="<%=data.price%>" name="listing[price]" required>
+         
+   </div>
+
+   <div class="container">
+      <div class="row">
+         <div class="col">
+            <label for="location" class="form-label">Location</label>
+            <input id="location" class="form-control" type="text" value="<%=data.location%>" name="listing[location]" required>
+         </div>
+         <div class="col">
+            <label for="country" class="form-label">Country</label>
+            <input id="country" class="form-control" type="text" value="<%=data.country%>" name="listing[country]" required>
+         </div>
+      </div>
+   </div>
+   <div class="container">
+      <button class="btn btn-primary mt-3" >
+         Edit
+      </button>
+   </div>
+
+</body>
+
+   
+</form>

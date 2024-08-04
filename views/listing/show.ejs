@@ -1,0 +1,111 @@
+<%layout("/layouts/boilerplate")-%>
+
+<body>
+<div class="row col-7 contaon">
+
+
+      <div class="card" style="border: none;">
+            <img src="<%= data.image%>" class="card-img-top" style="height: 45vh;"
+            alt="error! 🥲">
+            <div class="card-body">
+                  <h5 class="card-title" style="font-size: 2rem;"><%=data.title%></h5>
+                  <div class="card-text">
+                        <p style="font-size: 1.2rem;margin-bottom: 10px">
+                              <%=data.description%>
+                        </p>
+                        <p style="font-size: 1.2rem;margin-bottom: 25px;">
+                              <%if(data.location==data.country){%>
+                                    <%=data.location%>
+                              <%}else{%>
+                                    <%=data.location%>, <%=data.country%>
+                              <%}%>
+                        </p>
+                        <div class="thnx">
+                              <p style="font-size: 1.7rem;">&#x20B9
+                                    <%=data.price.toLocaleString("en-IN")%> / Night
+                              </p>
+                        </div>
+
+
+
+
+                  </div>
+            </div>
+            <div class="card-body btsn" style="margin-top:0px">
+                  <a class="btn btn-danger" href="/listing/edit/<%=data._id%>"
+                        class="card-link" style="margin-bottom: 3rem;">Edit</a>
+
+                  <form action="/listing/<%=data._id%>?_ninja=delete" method="post">
+                        <button class="btn btn-dark">Delete</button>
+                  </form>
+
+            </div>
+      </div>
+      <hr>
+      <form class="review_form needs-validation" action="/listing/<%=data.id%>/reviews" method="post" novalidate >
+            <h4 style="text-align: center;">Rate Your Experience</h4>
+            <div  class="container  mb-5 mt-5">
+                  <label for="rating_num" class="form-label">Rating</label>
+                  <input name="review[rating]"
+                  id="rating_num"
+                  class="form-control"
+                  type="range"
+                  min="1"
+                  max="5"
+                  placeholder="Rate Between 1 to 5">
+            </div>
+            <div class="container mb-5">
+               <label for="rating_string" class="form-label ">Comment</label>
+               <textarea name="review[comment]"
+                rows="5"
+                class="form-control "
+                columns="15"
+                id="rating_string"
+                placeholder="Give your review"
+                required>
+                </textarea>
+                <div class="invalid-feedback">
+                  Please add some comment
+                </div>
+            </div>
+            
+            <div class="container ">
+                  <button class="btn btn-outline-dark" >Submit</button>
+            </div>
+
+            
+            
+            
+      </form>
+      <hr>
+
+
+      <h4 style="margin: 20px 0 ;">All reviews</h4>
+            <div class="row">
+                  <%for(review of data.reviews){%>
+                        <div class="card col-5 mb-3 ms-3 ">
+                              <div class="card-body">
+                                    
+                                    <h5 class="card-title">John Dee</h5>
+                                    <p class="card-text"><i class="fa-solid fa-star" style="font-size: smaller"></i> <%= review.rating%></p>
+                                    <p class="card-text"><%= review.comment%></p>
+                                    
+                              </div>
+                              <form class="mb-3 ms-2" action="/listing/<%=data._id%>/reviews/<%=review._id%>?_ninja=delete" method="POST">
+                                    <button class="btn btn-outline-dark btn-sm">
+                                          Delete
+                                    </button>
+                              </form>
+                        </div>
+                   
+                                    
+                  <%}%>
+            </div>
+</div>
+
+
+      
+</body>
+
+
+

@@ -1,0 +1,150 @@
+* {
+   box-sizing: border-box;
+}
+
+html, body {
+   height: 100%;
+   margin: 0;
+   display: flex;
+   flex-direction: column;
+}
+
+body {
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+}
+
+.content {
+   flex: 1;
+
+}
+
+.navbar {
+   background-color: white;
+   height: 5rem;
+}
+
+.navbar .fa-compass {
+   color: #fe424d;
+   font-size: 2rem;
+}
+
+.nav-link {
+   color: black !important;
+}
+
+#f-info {
+   text-align: center;
+   height: 8rem;
+   width: 100vw;
+   background-color: #ebebeb;
+   display: flex;
+   align-items: center;
+   justify-content: space-evenly;
+   flex-wrap: wrap;
+}
+
+.f-link a {
+   text-decoration: none;
+   color: black;
+}
+
+.f-link a:hover {
+   text-decoration: underline;
+}
+
+.f-social {
+   width: 7%;
+   font-size: 1.4rem;
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+}
+
+.f-name {
+   width: 100%;
+}
+
+.f-social a {
+   color: rgb(35, 33, 33);
+}
+
+.f-link {
+   width: 100%;
+}
+
+ #row{
+   width: auto;
+   height: auto;
+
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+
+  
+   gap: 10px;
+}
+
+
+.card-text, .card-text a {
+   margin-top: 10px;
+   color: black;
+   text-decoration: none;
+   font-size: 0.9rem;
+} 
+.card-text a:hover{
+   text-decoration: underline black;
+}
+
+.listing-card {
+
+   box-sizing: border-box;
+   margin: 15px 0;
+   border-top-left-radius: 1rem !important;
+   border-top-right-radius: 1rem !important;
+   border: none !important;
+
+} 
+
+.listing-card img {
+   border-top-left-radius: 1rem !important;
+   border-top-right-radius: 1rem !important;
+     
+ } 
+.btsn{
+   width: 11rem;
+   display: flex;
+   justify-content: space-between;
+}
+
+
+.review button{
+   border-radius: 0.5rem;
+   border: none;
+   color: white;
+   background-color: #DC3545;
+   padding: 5px;
+   text-align: center;
+}
+
+.review button:hover{
+   background-color: black;
+}
+.review_form{
+   margin:5rem 0 5rem 0  ;
+   /* margin-left: 35%; */
+   height: 30rem;
+   width: 30rem;
+   /* border: 2px solid rgba(12, 8, 8, 0.4); */
+   border-radius: 1rem;
+} 
+
+
+.but{
+   border: none;
+   color:white;
+   background-color: #DC3545;
+   border-radius: 0.5rem;
+   padding: 5px;
+}

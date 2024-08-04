@@ -1,0 +1,61 @@
+
+<% layout("/layouts/boilerplate") -%>
+
+<body>
+  <link rel="stylesheet" href="/stylesheets/style_form.css">
+  <h4 style="position: relative; left: 43%; margin-bottom: 3rem;">NEW LISTING</h4>
+
+  <form action="/listing" method="POST" class="needs-validation" novalidate>
+    <div class="container mb-3">
+      <label for="title" class="form-label">Property Title</label>
+      <input id="title" type="text" class="form-control" placeholder="Title" name="listing[title]" required>
+      <div class="valid-feedback">Looks good!</div>
+      <div class="invalid-feedback">There is some error</div>
+    </div>
+
+    <div class="container mb-3">
+      <label for="description" class="form-label">Description</label>
+      <textarea id="description" class="form-control" type="text" placeholder="Description"
+        name="listing[description]" required></textarea>
+      <div class="valid-feedback">Perfect!</div>
+      <div class="invalid-feedback">Error</div>
+    </div>
+
+    <div class="container mb-3">
+      <label for="image" class="form-label">Image URL</label>
+      <input id="image" class="form-control" type="text" placeholder="Image URL" name="listing[image]">
+    </div>
+
+    <div class="container mb-3">
+      <label for="price" class="form-label">Price</label>
+      <input id="price" class="form-control" type="text" placeholder="Price" name="listing[price]" required>
+      <div class="valid-feedback">Nice</div>
+      <div class="invalid-feedback">Please type in valid format</div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <label for="location" class="form-label">Location</label>
+          <input id="location" class="form-control" type="text" placeholder="Location" name="listing[location]"
+            required>
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Provide a valid location</div>
+        </div>
+        <div class="col">
+          <label for="country" class="form-label">Country</label>
+          <input id="country" class="form-control" type="text" placeholder="Country" name="listing[country]"
+            required>
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Provide a valid Country</div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <button class="btn btn-primary mt-3">
+        Submit
+      </button>
+    </div>
+  </form>
+</body>
+</html>

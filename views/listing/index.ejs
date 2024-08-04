@@ -1,0 +1,36 @@
+
+<%layout("layouts/boilerplate")-%>
+
+<body>
+
+
+
+   <div id="row">
+
+         <%for(let data of dt){%> 
+
+            <a href="/listing/<%=data._id%>/show">
+               <div class="listing-card" style="width: 20rem; height: 22rem; ">
+                  <img style="width:100%; height:17rem ;object-fit: cover"src=<%=data.image%> class="card-img-top" alt="uff! error">
+                  <div class="card-body">
+                     <p class="card-text"><b><%=data.title%></b></a></p>
+                     <p class="card-text">&#x20B9
+                        <% if (data.price != null && data.price !== undefined) { %>
+                           <%= data.price.toLocaleString("en-IN")%> / Night
+                        <% } else { %>
+                           N/A
+                        <% } %>
+                    
+                     </p>
+
+                  </div>
+               </div>
+            </a>
+      
+
+      
+         <%}%>
+
+   </div> 
+  
+</body>
